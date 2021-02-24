@@ -1,0 +1,315 @@
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@400;500;700&display=swap');
+
+//COLORS
+//primary
+$very-dark-magenta: hsl(300, 43%, 22%);
+$soft-pink: hsl(333, 80%, 67%);
+//neutral
+$dark-grayish-magenta: hsl(303, 10%, 53%);
+$light-grayish-magenta: hsl(300, 24%, 96%);
+$white: hsl(0, 0%, 100%);
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Spartan', sans-serif;
+}
+
+section.hero{
+    background: url('bg-pattern-top-mobile.svg'), url('bg-pattern-bottom-mobile.svg');
+    background-repeat: no-repeat no-repeat;
+    background-position: top bottom;
+    background-size: fit-content fit-content;
+    text-align: center;
+    padding: 1.5em;
+
+    .left-top{
+
+        h1{
+            margin-top: 2em;
+            color: $very-dark-magenta;
+            font-size: 2.5rem;
+        }
+
+        p{
+            margin-bottom: 4em;
+        }
+    }
+    
+
+    .right-top{
+        margin-bottom: 4em;
+
+        .ratings{
+            background: $light-grayish-magenta;
+            padding: 1em 3em;
+            margin-bottom: 1em;
+
+            .stars{
+                margin-left: .5em;
+
+                img{
+                    margin-right: .5em;
+                }
+            }
+
+            p{
+                font-weight: bold;
+                color: $very-dark-magenta;
+            }
+        }
+    }
+
+    .bottom-container{
+        display: block;
+        color: white;
+    
+        .review-container{
+            background: $very-dark-magenta;
+            margin-bottom: 1em;
+            border-radius: .5em;
+            width: cover;
+            padding: 3em 2em;
+        }
+
+        .person-info{
+            display: flex;
+            margin-bottom: 1em;
+            
+            .person-name{
+                text-align: left;
+            }
+        }
+
+
+        .description{
+            text-align: left;
+        }
+
+        img{
+            border-radius: 50%;
+            width: 3.5em;
+            height: 3.5em;
+            margin-top: .8em;
+            margin-right: 1.5em;
+        }
+
+        .verified-buyer{
+            color: $soft-pink;
+        }
+    }
+}
+
+.attribution{
+    text-align: center;
+    background: $light-grayish-magenta;
+    //background-image: linear-gradient(left, right, #937b92, rgba($color: #ffffff, $alpha: 0.0);
+    padding: 1em;
+
+    a{
+        font-weight: bold;
+        text-decoration: none;
+        color: black;
+    }
+}
+
+//RESPONSIVE CODE
+@media (min-width: 768px){
+
+    section.hero{
+        padding: 2em 8em;
+        background: url('bg-pattern-top-desktop.svg'), url('bg-pattern-bottom-desktop.svg');
+        background-repeat: no-repeat no-repeat;
+        background-position: top left, bottom right;
+        background-size: fit-content, fit-content;
+
+        .top-container{
+            display: flex;
+            justify-content: space-between;
+    
+            .left-top{
+                width: 50%;
+                text-align: left;
+            }
+            
+            .right-top{
+                margin-top: 6em;
+
+                .ratings{
+                    width: 50%;
+                    display: flex;
+                    width: 27em;
+                    padding-left: 2em;
+                    padding-right: 4em;
+                    padding-top: .5em;
+                    padding-bottom: 0;
+                    border-radius: .5em;
+    
+                    .stars{
+                        margin-top: 1em;
+                        margin-right: 2em;
+                    }
+    
+                }
+                
+                #rating2{
+                    position: relative;
+                    margin-left: 4em;
+                }
+
+                #rating3{
+                    position: relative;
+                    margin-left: 8em;
+                }
+            }
+        }
+
+        .bottom-container{
+            display: flex;
+
+            .review-container{
+                margin-right: 2em;
+                width: 30em;
+            }
+            
+            #review2{
+                margin-top: 1em;
+            }
+
+            #review3{
+                margin-top: 2em;
+            }
+        }
+    }
+}
+
+//ANIMATIONS
+//TOP-LEFT ANIMATIONS
+.left-top{
+    animation: left-topFadeIn 1.5s forwards;
+    animation-delay: .5s;
+    opacity: 0;
+}
+
+@keyframes left-topFadeIn{
+    from{
+        opacity: 0;
+        transform: translateY(-10em);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+//TOP-RIGHT ANIMATIONS
+#rating1{
+    animation: rating1FadeIn 1s forwards;
+}
+
+@keyframes rating1FadeIn{
+    from{
+        opacity: 0;
+        transform: translateX(10em);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+}
+//
+#rating2{
+    animation: rating2FadeIn 1s forwards;
+    animation-delay: .1s;
+    opacity: 0;
+}
+
+@keyframes rating2FadeIn{
+    from{
+        opacity: 0;
+        transform: translateX(10em);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+//
+#rating3{
+    animation: rating3FadeIn 1s forwards;
+    animation-delay: .2s;
+    opacity: 0;
+}
+
+@keyframes rating3FadeIn{
+    from{
+        opacity: 0;
+        transform: translateX(10em);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+//BOTTOM SECTION ANIMATIONS
+#review1{
+    animation: review1FadeIn 2s forwards;
+    animation-delay: 1.5s;
+    opacity: 0;
+}
+
+@keyframes review1FadeIn{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+//
+#review2{
+    animation: review2FadeIn 2s forwards;
+    animation-delay: 2s;
+    opacity: 0;
+}
+
+@keyframes review2FadeIn{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+//
+#review3{
+    animation: review3FadeIn 2s forwards;
+    animation-delay: 2.5s;
+    opacity: 0;
+}
+
+@keyframes review3FadeIn{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+//FOOTER ANIMATION
+.attribution{
+    animation: attributionFadeIn 2s forwards;
+    animation-delay: 3s;
+    opacity: 0;
+}
+
+@keyframes attributionFadeIn{
+    from{
+        opacity: 0;
+        //transform: translateY(10em);
+    }
+    to{
+        opacity: 1;
+        //transform: translateY(0);
+    }
+}
